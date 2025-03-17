@@ -1,46 +1,25 @@
 # Midterm-task
 Online Payment Gateway (Intermediate – 60 points)
-Design Patterns to Apply:
+Description
+This project is a Payment Gateway Simulator that allows users to process payments using different payment methods, including Credit Card, PayPal, and Cryptocurrency. The system incorporates the Factory Method Pattern to dynamically create payment method objects and the Adapter Pattern to integrate external APIs. A transaction logging mechanism is also included.
+Features
+1. The user selects a payment method:
+Credit Card
+PayPal
+Cryptocurrency
+2. The system collects the necessary details based on the selected method.
+3. The payment is processed, and its outcome (completed or failed) is determined randomly (except for PayPal, which always succeeds if login is valid).
+4. The transaction details are logged with a timestamp
+Code Structure
+Main Classes
+PaymentMethod (interface) — Defines a processPayment(double amount) method for all payment types.
+CreditCardPayment, PayPalPayment, CryptoPayment (classes) — Implement different payment methods.
+PaymentFactory — Uses the Factory Method Pattern to create payment objects dynamically.
+CreditCardValidatorAdapter, PayPalAPIAdapter — Implement the Adapter Pattern to interact with external validation APIs.
+TransactionLogger — Logs all transactions, including payment method, amount, status, and timestamp.
+PaymentGateway — The main class that runs the simulation.
 
-Factory Method
-Adapter
-Task Overview
-Create a Payment Platform that supports multiple payment methods (e.g., credit card, PayPal, cryptocurrency). This system should handle basic transactions and integrate at least one external or legacy API.
-
-Requirements Breakdown
-Factory Method Pattern
-
-Encapsulate the creation of different payment method objects, such as CreditCardPayment, PayPalPayment, and CryptoPayment.
-Each payment class implements a common interface, e.g., PaymentMethod with processPayment(amount).
-Show how a PaymentFactory (or multiple factories) instantiates the correct payment class based on user selection or configuration.
-Adapter Pattern
-
-Integrate at least one external or mock API. For example:
-A payment validation library for credit cards.
-A simplified test service representing PayPal’s API calls.
-The Adapter ensures external API calls conform to the internal PaymentMethod interface.
-Additional Complexity or Features (to justify 60 points instead of 40):
-
-Include transaction status (pending, completed, failed).
-Maintain a transaction history or log.
-Provide minimal error handling or exceptions (e.g., insufficient funds, invalid credentials).
-(Optional) Implement partial or staged payments if appropriate.
-Deliverables
-Source Code:
-Payment classes for each method, created via the Factory Method.
-An Adapter class to communicate with at least one external/mock payment service.
-Additional features such as transaction logging or error handling.
-Demo Application:
-A console or minimal GUI where users can:
-Select the payment type.
-Enter payment details (e.g., fake credit card info, PayPal account).
-Process a transaction (simulate success/failure).
-Possibly view a transaction history and statuses.
-Point Allocation (Example)
-Correct Factory Method implementation (25 points)
-Adapter integration with an external or mock API (20 points)
-Transaction management, logging, or error-handling features (15 points)
-
+  
 Coffee Shop Simulator (Easy – 40 points)
 Description
 
