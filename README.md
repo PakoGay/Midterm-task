@@ -40,59 +40,27 @@ Point Allocation (Example)
 Correct Factory Method implementation (25 points)
 Adapter integration with an external or mock API (20 points)
 Transaction management, logging, or error-handling features (15 points)
+
 Coffee Shop Simulator (Easy – 40 points)
-Design Patterns to Apply:
+Description
 
-Factory Method
-Decorator
-Task Overview
-Build a Coffee Ordering System where customers can choose different coffee drinks and dynamically add extra ingredients or toppings.
-
-Requirements Breakdown
-Factory Method Pattern
-
-A CoffeeFactory that creates different coffee objects (e.g., Espresso, Cappuccino, Latte, Americano).
-Each coffee type implements a common Coffee interface (e.g., getCost(), getDescription()).
-Decorator Pattern
-
-Add ingredients (milk, caramel syrup, whipped cream, chocolate syrup) dynamically.
-Decorators wrap the Coffee object to modify cost and description.
-Example: ChocolateDecorator adds “Chocolate Syrup” to getDescription() and increases the cost accordingly.
-Deliverables
-Source Code:
-Classes for each coffee type.
-Decorator classes for toppings.
-Demo Application:
-A console or lightweight GUI where users:
-Select a coffee base from the factory.
-Choose multiple toppings/ingredients.
-Displays final cost and description of the customized coffee.
-Point Allocation (Example)
-Correct Factory Method for coffee types (20 points)
-Correct Decorator implementation for toppings (10 points)
-Clarity of the final solution & demonstration (10 points)
-General Guidelines
-Programming Language/Framework
-
-Feel free to use Java, C#, Python, or any language you prefer, unless otherwise specified by your instructor.
-Documentation
-
-Ensure your code is well-commented, highlighting how and where each design pattern is applied.
-Provide a brief overview (in a README or doc comments) describing your system’s architecture.
-Collaboration
-
-Students may work individually or in small teams (2–3), based on instructor policy.
-Testing
-
-Include basic tests or demonstrations to show how each feature works.
-Scoring Suggestions
-Total Available Points: 200
-
-Smart Home Control System (100 points)
-Online Payment Gateway (60 points)
-Coffee Shop Simulator (40 points)
-You Need 100 Points:
-
-Option A: Do the Smart Home Control System alone for a full 100 points.
-Option B: Combine Online Payment Gateway (60 points) + Coffee Shop Simulator (40 points) = 100 points exactly.
-Option C: If you complete more than 100 points worth of tasks or add extra features, that is up to you—only 100 is required for the midterm.
+This project is a simple Coffee Shop Simulator where users can order coffee and customize it with various toppings. The program is implemented using the Decorator Pattern, allowing dynamic addition of new properties (toppings) to coffee objects.
+Features
+1. The user selects a type of coffee from the available options:
+Espresso ($2.0)
+Cappuccino ($3.0)
+Latte ($3.5)
+Americano ($2.5)
+2. The user can then add one or more toppings:
+Milk (+$0.5)
+Caramel syrup (+$0.7)
+Whipped cream (+$0.6)
+Chocolate syrup (+$0.8)
+3. The program displays the final order description along with the total cost.
+Code Structure
+Main Classes
+Coffee (interface) — Defines standard methods getCost() and getDescription() for all coffee types.
+Espresso, Cappuccino, Latte, Americano (classes) — Concrete implementations of coffee with predefined costs and descriptions.
+CоffeeDecorator (abstract class) — A base class for decorators that extend coffee functionality.
+CaramelDecorator, ChocolateSyrupDecorator, MilkDecorator, WhippedCreamDecorator — Decorators adding toppings to coffee.
+CoffeeFactory — A factory method that creates coffee objects based on user input.
